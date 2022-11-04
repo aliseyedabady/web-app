@@ -1,6 +1,6 @@
 import React from "react";
-import { COLOR } from "../../Utils/Colors";
-import { STYLES } from "../../Utils/Styles";
+import { COLOR } from "../../../Utils/Colors";
+import { STYLES } from "../../../Utils/Styles";
 
 const UserCard = ({ data }) => {
   return (

@@ -1,13 +1,9 @@
 import React from "react";
 
 const FlatList = ({ renderItem = () => {}, data = [] }) => {
-  return (
-    <div>
-      {data.map((item, count) => {
-        return renderItem(item, count);
-      })}
-    </div>
-  );
+  return data.map((item, count) => {
+    return renderItem(item, count);
+  });
 };
 
 export default FlatList;

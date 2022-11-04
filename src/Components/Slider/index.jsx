@@ -11,21 +11,22 @@ const Slider = ({
   renderItem = () => {},
   space = 30,
   header = {},
+  slidesPerView = 4,
+  centeredSlides = true,
 }) => {
   return (
     <>
       {header && <Title title={header.title} link={header.link} />}
       <Swiper
-        slidesPerView={4}
+        slidesPerView={slidesPerView}
         spaceBetween={space}
-        centeredSlides={true}
+        centeredSlides={centeredSlides}
         pagination={{
           clickable: true,
         }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={swiper => console.log(swiper)}
         modules={[Pagination]}
-        className="mySwiper"
         initialSlide={4}
         loop={true}
       >

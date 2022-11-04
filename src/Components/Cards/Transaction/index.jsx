@@ -1,6 +1,6 @@
 import React from "react";
-import { COLOR } from "../../Utils/Colors";
-import { STYLES } from "../../Utils/Styles";
+import { COLOR } from "../../../Utils/Colors";
+import { STYLES } from "../../../Utils/Styles";
 
 const TransactionCard = ({ data }) => {
   return (
@@ -13,7 +13,7 @@ const TransactionCard = ({ data }) => {
         alignItems: "center",
         borderRadius: "10px",
         marginBottom: "10px",
-        padding: "20px 24px",
+        padding: STYLES.padding,
       }}
     >
       <div className="d-flex " style={{ alignItems: "center" }}>
