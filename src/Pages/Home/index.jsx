@@ -13,9 +13,117 @@ import { COLOR } from "../../Utils/Colors";
 import Progress from "../../Components/Progress";
 import NewsCard from "../../Components/Cards/News";
 import StateBox from "../../Components/Cards/State";
+import { STYLES } from "../../Utils/Styles";
+import IconBox from "../../Components/IconBox";
+import { BiTransfer } from "react-icons/bi";
+import {
+  AiOutlineArrowDown,
+  AiOutlineArrowRight,
+  AiOutlinePlus,
+} from "react-icons/ai";
+import MyCard from "../../Components/Cards/MyCard";
 const Home = () => {
+  const props = {
+    size: "1.4rem",
+    color: COLOR.white,
+  };
   return (
     <Layout>
+      <div
+        className="container"
+        style={{
+          backgroundColor: COLOR.white,
+          boxShadow: STYLES.boxShadow,
+          borderRadius: STYLES.borderRadius,
+          padding: STYLES.padding,
+          marginBottom: "20px",
+        }}
+      >
+        <div className="row mb-2 " style={{ paddingBottom: "10px" }}>
+          <div className="col-9">
+            <span
+              style={{
+                color: COLOR.black,
+                fontWeight: "500",
+                fontSize: "15px",
+              }}
+            >
+              Total Balance
+            </span>
+            <h1
+              style={{
+                fontWeight: 700,
+                letterSpacing: "-0.01em",
+                lineHeight: "1em",
+                fontSize: "32px",
+              }}
+            >
+              $ 2,562.50
+            </h1>
+          </div>
+          <div className="col-3 d-flex justify-content-end">
+            <IconBox
+              icon={<AiOutlinePlus color={COLOR.grap} size="1.4rem" />}
+              style={{
+                backgroundColor: "rgba(98,54,255,0.1)",
+                height: "60px",
+              }}
+            />
+          </div>
+        </div>
+        <div
+          className="row"
+          style={{
+            borderTop: "1px solid #DCDCE9",
+            paddingTop: "20px",
+          }}
+        >
+          {[
+            {
+              icon: <AiOutlineArrowDown {...props} />,
+              color: COLOR.red,
+              text: "Withdraw",
+            },
+            {
+              color: COLOR.grap,
+              text: "Send",
+              icon: <AiOutlineArrowRight {...props} />,
+            },
+            {
+              color: COLOR.green,
+              text: "Cards",
+              icon: <BsCreditCard {...props} />,
+            },
+            {
+              color: COLOR.yellow,
+              text: "Exchange",
+              icon: <BiTransfer {...props} color={COLOR.white} />,
+            },
+          ].map(item => {
+            return (
+              <div className="col-3 d-flex justify-content-center flex-column align-items-center">
+                <IconBox icon={item.icon} color={item.color} />
+                <p
+                  style={{
+                    textAlign: "center",
+
+                    fontWeight: 500,
+                    fontSize: "11px",
+                    lineHeight: "1.2em",
+                    marginTop: "10px",
+                  }}
+                >
+                  {item.text}
+                </p>
+              </div>
+            );
+          })}
+
+          <div className="col-3"></div>
+          <div className="col-3"></div>
+          <div className="col-3"></div>
+        </div>
+      </div>
       <div className="container">
         <div className="row">
           <FlatList
@@ -84,7 +192,71 @@ const Home = () => {
             ]}
           />
         </div>
-
+        <Slider
+          header={{
+            title: "My Cards",
+            link: {
+              title: "View All",
+              to: "/",
+            },
+          }}
+          space={10}
+          slidesPerView={1}
+          data={[
+            {
+              balance: "$ 1,256,90",
+              cardNumber: "•••• 9905",
+              EXPIRY: "12 / 25",
+              ccv: "553",
+              color: COLOR.grap,
+            },
+            {
+              balance: "$ 521,44",
+              cardNumber: "•••• 9905",
+              EXPIRY: "12 / 25",
+              ccv: "553",
+              color: COLOR.gray,
+            },
+            {
+              balance: "$ 1,256,90",
+              cardNumber: "•••• 9905",
+              EXPIRY: "12 / 25",
+              ccv: "553",
+              color: COLOR.green,
+            },
+            {
+              balance: "$ 1,256,90",
+              cardNumber: "•••• 9905",
+              EXPIRY: "12 / 25",
+              ccv: "553",
+              color: COLOR.red,
+            },
+            {
+              balance: "$ 1,256,90",
+              cardNumber: "•••• 9905",
+              EXPIRY: "12 / 25",
+              ccv: "553",
+              color: COLOR.yellow,
+            },
+            {
+              balance: "$ 1,256,90",
+              cardNumber: "•••• 9905",
+              EXPIRY: "12 / 25",
+              ccv: "553",
+              color: COLOR.lightGreen,
+            },
+            {
+              balance: "$ 1,256,90",
+              cardNumber: "•••• 9905",
+              EXPIRY: "12 / 25",
+              ccv: "553",
+              color: COLOR.dark,
+            },
+          ]}
+          renderItem={item => {
+            return <MyCard data={item} style={{ width: "100%" }} />;
+          }}
+        />
         <Slider
           header={{
             title: "Send Money",

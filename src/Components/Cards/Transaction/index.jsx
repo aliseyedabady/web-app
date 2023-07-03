@@ -25,7 +25,7 @@ const TransactionCard = ({ data }) => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            marginLeft: "5px",
+            marginLeft: "15px",
           }}
         >
           <h4 style={{ fontSize: "15px", fontWeight: "500" }}>{data.title}</h4>

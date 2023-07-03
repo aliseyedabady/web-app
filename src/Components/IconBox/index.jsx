@@ -2,7 +2,7 @@ import React from "react";
 import { BsCreditCard } from "react-icons/bs";
 import { COLOR } from "../../Utils/Colors";
 
-const IconBox = ({ icon, color = "" }) => {
+const IconBox = ({ icon, color = "", style = {} }) => {
   return (
     <div
       style={{
@@ -13,6 +13,7 @@ const IconBox = ({ icon, color = "" }) => {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: color,
+        ...style,
       }}
     >
       {icon}

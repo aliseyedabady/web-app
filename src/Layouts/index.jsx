@@ -4,7 +4,7 @@ import { COLOR } from "../Utils/Colors";
 const Layout = ({ children }) => {
   return (
     <div style={{ backgroundColor: COLOR.backgroundColor }}>
-      {children}
+      <div style={{ padding: "0 15px" }}>{children}</div>
       <TabBar />
     </div>
   );

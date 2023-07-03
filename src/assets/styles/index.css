@@ -3,9 +3,11 @@
   padding: 0;
   box-sizing: border-box !important;
 }
+
 a {
   text-decoration: none;
 }
+
 h1,
 h2,
 h3,
@@ -16,14 +18,17 @@ p {
   padding: 0;
   margin: 0;
 }
+
 body {
   height: 100%;
   background-color: #ededf5;
   padding: 56px 0;
 }
+
 button {
   border: none;
 }
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -33,19 +38,9 @@ button {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 
@@ -53,18 +48,21 @@ button {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .progress {
   height: 14px !important;
   border-radius: 10px !important;
-  .progress-bar {
-    background-color: #6236ff !important;
-    font-size: 10px !important;
-    height: 14px !important;
-    font-weight: 500 !important;
-  }
 }
+.progress .progress-bar {
+  background-color: #6236ff !important;
+  font-size: 10px !important;
+  height: 14px !important;
+  font-weight: 500 !important;
+}
+
 .col,
 .col-1,
 .col-2,
@@ -129,32 +127,31 @@ button {
   padding-left: 8px;
   padding-right: 8px;
 }
+
 .mt-2 {
   margin-top: 16px !important;
 }
+
 .form-switch {
   height: 30px;
 }
-.form-check {
-  padding: 0;
-  margin: 0;
-  min-height: auto;
-  height: auto;
-}
-.form-check .form-check-input {
+
+.form-switch .form-check-input {
   display: none;
 }
+
 .form-switch .form-check-label {
   width: 56px;
   height: 30px;
   padding: 0;
   margin: 0;
 }
-.form-check .form-check-label {
+
+.form-switch .form-check-label {
   cursor: pointer;
   position: relative;
   min-height: 20px;
   padding: 0 0 0 32px;
   line-height: 1.7em;
   color: #27173e;
-}
+}/*# sourceMappingURL=index.css.map */
